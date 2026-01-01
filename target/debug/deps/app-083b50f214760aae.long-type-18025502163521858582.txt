@@ -1,1 +1,0 @@
-rayon::iter::Filter<rayon::slice::Iter<'_, i32>, {closure@weeks/week-01-rust-basics/app/src/main.rs:23:49: 23:52}>
