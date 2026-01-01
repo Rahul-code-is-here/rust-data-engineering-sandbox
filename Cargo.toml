@@ -1,0 +1,4 @@
+[workspace]
+members = [
+    "weeks/week-01/week-01-rust-basics/app",
+]
