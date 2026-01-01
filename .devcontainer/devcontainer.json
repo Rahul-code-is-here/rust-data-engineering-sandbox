@@ -1,0 +1,8 @@
+{
+    "name": "Rust Data Engineering Sandbox",
+    "image": "mcr.microsoft.com/devcontainers/rust:latest",
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "postCreateCommand": "rustup component add rustfmt clippy"
+}
