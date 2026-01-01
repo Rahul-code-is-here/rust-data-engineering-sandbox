@@ -1,0 +1,31 @@
+name: Rust CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+
+      - name: Run checks
+        run: |
+          for dir in weeks/*; do
+            if [ -f "$dir/Makefile" ]; then
+              cd $dir/app
+              cargo fmt --all
+              cargo clippy -- -D warnings
+              cargo test
+              cargo build
+              cd -
+            fi
+          done
